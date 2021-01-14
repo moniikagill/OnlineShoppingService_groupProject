@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User information</title>
+    <% include ../partials/head %>
+</head>
+
+<body style="background: url(/images/bakery-food-coffee-pastry-sweets-photo11.jpg)">
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+
+    <!-- dispalying images -->
+    <div class="container mt-4">
+        <div class="card-deck">
+            <div class="card mx-auto" style="width: 40rem;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <span id="firstname"><%= first_name %> </span>
+                        <span id="lastname"><%= last_name %></span>
+                    </h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= email %></li>
+                    <li class="list-group-item">$<%= credit %></li>
+                    <li class="list-group-item">Joined: <%= joined %></li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link" id="remove" onclick="deleteUser('<%= uid %>');">Remove</a>
+                    <a href="#" class="card-link" id="edit">Edit</a>
+                </div>
+
+            </div>
+
+            <div class="card col-auto">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Purchase History
+                    </h5>
+
+                    <ul class="list-group list-group-flush">
+                        <% if(items.length == 0) { %>
+                        <li class="list-group-item">
+                            <p> None </p>
+                        </li>
+                        <%} %>
+                        <% for(var i=0; i < items.length; i++) { %>
+                        <li class="list-group-item">
+                            <%=items[i].product %> $ <%=items[i].cost %>
+                        </li>
+                        <% }%>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

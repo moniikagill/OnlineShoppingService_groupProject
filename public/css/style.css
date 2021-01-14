@@ -1,0 +1,126 @@
+.headerset{
+    padding-top: 100px;
+    box-sizing: border-box
+
+
+}
+.headerset h2{
+    font-size: 40px;
+}
+.headerset h1{
+    font-size: 60px;
+}
+.form-dark .font-small {
+  font-size: 0.8rem; }
+
+/* .form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+  font-size: 0.8rem; }
+
+.form-dark [type="checkbox"] + label:before {
+  top: 2px;
+  width: 15px;
+  height: 15px; } */
+
+.form-dark .md-form label {
+  color: #fff; }
+
+.form-dark input[type=email]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=email]:focus:not([readonly]) + label {
+  color: #fff; }
+
+.form-dark input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+  color: #fff; }
+
+
+
+.form-dark .modal-header {
+    border-bottom: none;
+}
+.fa-shopping-cart{
+  color: #fff;
+
+}
+.cart {
+  position: absolute;
+  min-height: 10rem;
+  background: var(--mainWhite);
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.5);
+  width: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.show-cart {
+  width: 20rem;
+  padding: 2rem 1.5rem;
+  transform: rotateY(-360deg);
+  margin-top: 60px;
+}
+.cart-item {
+  transition: all 2s ease-in-out;
+}
+
+.cart-item-remove{
+  color: var(--mainPink);
+  transition: all 1s ease-in-out;
+
+}
+.cart-item-remove:hover{
+  transform:scale(1.1);
+  color:var(--mainBlack);
+}
+
+/* .container {
+    width: 200px;
+    height: 120px;
+} */
+
+/* resize images */
+.container img {
+    width: 100%;
+    height: auto;
+}
+.cart-info {
+  border: 0.1rem solid var(--mainBlack);
+  color: var(--mainBlack);
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  align-self: auto;
+}
+.cart-info:hover {
+  background: var(--mainPink);
+  border-color: var(--mainPink);
+  color: var(--mainWhite);
+}
+.cart-info:hover .cart-info__icon {
+  color: var(--mainWhite);
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 27%;
+  right: 10%;
+}
+
+.card .cart_btn {
+  visibility:hidden;
+}
+
+.card:hover .cart_btn {
+  visibility:visible;
+}
+
+

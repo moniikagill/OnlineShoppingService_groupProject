@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Homepage</title>
+  <% include ../partials/head %>
+</head>
+
+<body style="background: url(images/bakery-food-coffee-pastry-sweets-photo11.jpg);">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <div>
+    <div class="container text-center text-white headerset">
+      <h2 style="text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Welcome</h2>
+      <h1 style="text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Feeling hungry?</h1>
+      <button class="btn btn-warning text-white btn-lg" id="browse">Browse</button>
+    </div>
+  </div>
+
+
+  <!-- dispalying images -->
+
+  <div class="row" id="cafeitems" style="display: none;">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
+      <div class="card">
+        <img src="images/coff.jpg" class="card-img img-fluid">
+
+        <button class="btn btn-warning text-white btn-lg" onclick="window.location.href='/products'">Coffee</button>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
+      <div class="card">
+        <img src="images/food.jpg" class="card-img img-fluid">
+
+        <button class="btn btn-warning text-white btn-lg" onclick="window.location.href='/products'">Food</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

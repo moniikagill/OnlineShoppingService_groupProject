@@ -1,0 +1,184 @@
+<!-- views/partials/header.ejs -->
+<div style="display:none" id="userid"><%= uid %> </div>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand text-warning">Online Coffee Shop</a>
+
+        <!--For when the screen shrinks to a certain point, shows the three bars-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="collapsenavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/products?category=Foods" class="nav-link text-white">Food</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/products?category=Drinks" class="nav-link text-white">Beverages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/products" class="nav-link text-white">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Collapsible content -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <form class="form-inline ml-auto" action="/products" method="GET">
+                            <button href="#!" class="btn btn-default text-white" type="submit">Search</button>
+                            <div class="md-form my-0">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search"
+                                    name="search">
+                            </div>
+
+                        </form>
+
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+
+        <div class="collapse navbar-collapse " id="collapsenavbar">
+            <ul class="navbar-nav ml-auto">
+
+                <div class="login-container nav-item" style="display:none" id="loginContainer">
+                    <form method="POST" id="login_form" action="/api/user/login">
+                        <input type="email" placeholder="user@email.com" name="user[username]" id="username">
+                        <input type="password" placeholder="password" name="user[password]" id="password">
+                        <button style="display:none" type="submit">submit</button>
+                        <!--Allows enter to submit the form-->
+                    </form>
+                </div>
+
+                <li class="nav-item" id="login_li" <%if (username.length > 0) { %> style="display:none" <%}%> >
+                    <button class="btn btn-default text-white" id="loginButton" >Login</button>
+                </li>
+
+                <li class="nav-item" id="signup_li" <%if (username.length > 0) { %> style="display:none" <%}%> >
+                    <button href="" class="btn btn-default btn-rounded text-white" data-toggle="modal"
+                        data-target="#darkModalForm">Signup</button> 
+                </li>
+
+                <li class="nav-item" id="username_li" <%if (username.length == 0) { %> style="display:none" <%}%> >
+                    <a href="/api/user/<%= uid %>" class="nav-link text-white" id="user-details"><%= username %></a>
+                </li>
+
+                <li class="nav-item" id="signout_li" <%if (username.length == 0) { %> style="display:none" <%}%> >
+                    <a href="#" class="nav-link text-white" id="sign-out">Sign out</a> 
+                </li> 
+                
+                <li class="nav-item"  id="cart_li"<%if (username.length == 0) { %> style="display:none" <%}%>>
+                    <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+                        <span class="cart-info__icon mr-lg-3"><i class="fa fa-shopping-cart"></i></span>
+                    </div>
+                </li>
+            </ul> 
+        </div>
+    </div> 
+</nav> 
+                    
+<!-- Sign up form -->
+
+<!-- Modal -->
+<div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog form-dark" role="document">
+        <!--Content-->
+        <div class="modal-content card card-image"
+            style="background-image: url('images/signupImage.jpg');">
+            <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                <!--Header-->
+                <div class="modal-header text-center pb-4">
+                    <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
+                        <strong>SIGN</strong> <a class="green-text font-weight-bold"><strong>
+                                UP</strong></a></h3>
+                    <button type="button" class="close white-text" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    <!--Body-->
+                    <div class="md-form mb-5">
+                        <input type="firstname" id="firstname"
+                            class="form-control validate white-text">
+                        <label>First Name</label>
+                    </div>
+                    <div class="md-form mb-5">
+                        <input type="lastname" id="lastname"
+                            class="form-control validate white-text">
+                        <label>Last Name</label>
+                    </div>
+                    <div class="md-form mb-5">
+                        <input type="email" id="Form-email5"
+                            class="form-control validate white-text">
+                        <label data-error="wrong" data-success="right" for="Form-email5">Your
+                            email</label>
+                    </div>
+
+                    <div class="md-form pb-3">
+                        <input type="password" id="Form-pass5"
+                            class="form-control validate white-text">
+                        <label data-error="wrong" data-success="right" for="Form-pass5">Your
+                            password</label>
+
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row d-flex align-items-center mb-4">
+
+                        <!--Grid column-->
+                        <div class="text-center mb-3 col-md-12">
+                            <button class="btn btn-success btn-block btn-rounded z-depth-1"
+                                type="submit" onclick="onSubmitFormEmail()">Sign up</button>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+                            <p class="font-small white-text d-flex justify-content-end">Have an
+                                account? <a href="#" onclick=" $('#darkModalForm').modal('hide'); $('#loginContainer').show('slide', { direction: 'right' }, 700);" class="green-text ml-1 font-weight-bold">
+                                    Log in</a></p>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                </div>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal -->
+
+<!-- end of sign up form code -->
+<div id="cart" class="cart">
+   
+          
+      <!-- cart total -->
+      <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+        <h5>Total</h5>
+        <h5> $ <strong id="cart-total" class="font-weight-bold">0</strong></h5>
+      </div>
+
+      <!--end cart total -->
+
+      <!-- cart buttons -->
+      <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+        <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+        <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink" onclick="checkoutCart();">checkout</a>
+      </div>
+</div>

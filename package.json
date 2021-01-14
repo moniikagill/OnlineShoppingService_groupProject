@@ -1,0 +1,33 @@
+{
+  "name": "nwen304group_project",
+  "version": "1.0.0",
+  "description": "An awesome coffee shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.ecs.vuw.ac.nz/nwen304group2/nwen304group_project.git"
+  },
+  "keywords": [
+    "awesome",
+    "coffee"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "connect-sqlite3": "^0.9.11",
+    "core-util-is": "^1.0.2",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "googleapis": "^43.0.0",
+    "pg": "^7.12.1"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
